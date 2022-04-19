@@ -51,22 +51,39 @@ class MyActionListener implements java.awt.event.ActionListener {
                 switch (e.getActionCommand().charAt(0)){
                         case '*':
                                 sign = '*';
-                                save2var1 = false;
+                                save2var1 = false;//Przejscie do kolejnej cyfry var2
                                 var2 = 0;
                                 break;
                         case '/':
                                 sign = '/';
-                                save2var1 = false;
+                                save2var1 = false;//Przejscie do kolejnej cyfry var2
                                 var2 = 0;
                                 break;
                         case '+':
+                                if(sign != '0'){
+                                        switch (sign){
+                                                case '*':
+                                                        var1=var1*var2;
+                                                        break;
+                                                case '/':
+                                                        var1=var1/var2;
+                                                        break;
+                                                case '+':
+                                                        var1=var1+var2;
+                                                        break;
+                                                case '-':
+                                                        var1=var1-var2;
+                                                        break;
+                                        }
+                                        calc.jt.setText(String.valueOf(var1));
+                                }
                                 sign = '+';
-                                save2var1 = false;
+                                save2var1 = false;//Przejscie do kolejnej cyfry var2
                                 var2 = 0;
                                 break;
                         case '-':
                                 sign = '-';
-                                save2var1 = false;
+                                save2var1 = false;//Przejscie do kolejnej cyfry var2
                                 var2 = 0;
                                 break;
                         case 'C':
@@ -95,7 +112,7 @@ class MyActionListener implements java.awt.event.ActionListener {
                                 //System.out.print(var1);
                                 calc.jt.setText(String.valueOf(var1));
                                 //var2=0;
-                                //sign=0;
+                                sign=0;
                                 break;
                         default:
                                 //Entering multi digits number
