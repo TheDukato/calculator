@@ -48,7 +48,7 @@ class MyActionListener implements java.awt.event.ActionListener {
     static private boolean save2var1 = true;
     static private boolean procesed;
     static private char[] shorHistryOfChar = new char[100];
-    static private int counterHistorian;
+    static private int counterHistorian = 1;
 
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand().charAt(0)) {
@@ -59,7 +59,11 @@ class MyActionListener implements java.awt.event.ActionListener {
                             var1 = var1 * var2;
                             break;
                         case '/':
-                            var1 = var1 / var2;
+                            try{
+                                var1 = var1 / var2;
+                            } catch (Exception exception) {
+                            }
+
                             break;
                         case '+':
                             var1 = var1 + var2;
@@ -79,7 +83,7 @@ class MyActionListener implements java.awt.event.ActionListener {
                 //System.out.println("Saved: "+shorHistryOfChar[counterHistorian-1]+" sign at index: "+counterHistorian);
                 break;
             case '/':
-                if (!procesed) {
+/*                if (!procesed) {
                     switch (sign) {
                         case '*':
                             var1 = var1 * var2;
@@ -95,7 +99,7 @@ class MyActionListener implements java.awt.event.ActionListener {
                             break;
                     }
                     calc.jt.setText(String.valueOf(var1));
-                }
+                }*/
                 sign = '/';
                 save2var1 = false;//Przejscie do kolejnej cyfry var2
                 var2 = 0;
@@ -170,27 +174,11 @@ class MyActionListener implements java.awt.event.ActionListener {
                 }
                 break;
             case '=':
-                //System.out.print(String.valueOf(var1)+sign+String.valueOf(var2)+"=");
-                switch (sign) {
-                    case '*':
-                        var1 = var1 * var2;
-                        break;
-                    case '/':
-                        var1 = var1 / var2;
-                        break;
-                    case '+':
-                        var1 = var1 + var2;
-                        break;
-                    case '-':
-                        var1 = var1 - var2;
-                        break;
-                }
-                calc.jt.setText(String.valueOf(var1));
-                procesed = true;
-                if (shorHistryOfChar[counterHistorian - 1] == '+' || shorHistryOfChar[counterHistorian - 1] == '-' || shorHistryOfChar[counterHistorian - 2] == '*' || shorHistryOfChar[counterHistorian - 1] == '/') {
-                    System.out.println("In moment 3 \nVar1: "+var1+"\nVar2: "+var2);
+                System.out.println("After if conditions \nVar1: "+var1+"\nVar2: "+var2);
+                if (shorHistryOfChar[counterHistorian - 1] == '+' || shorHistryOfChar[counterHistorian - 1] == '-' || shorHistryOfChar[counterHistorian - 1] == '*' || shorHistryOfChar[counterHistorian - 1] == '/') {
+                    //System.out.println("In moment 3 \nVar1: "+var1+"\nVar2: "+var2);
                     var2 = var1;
-                    System.out.println("In moment 1 \nVar1: "+var1+"\nVar2: "+var2);
+                    //System.out.println("In moment 1 \nVar1: "+var1+"\nVar2: "+var2);
                     switch (shorHistryOfChar[counterHistorian - 1]) {
                         case '*':
                             var1 = var1 * var2;
@@ -207,6 +195,24 @@ class MyActionListener implements java.awt.event.ActionListener {
                     }
                     calc.jt.setText(String.valueOf(var1));
                 }
+                else {
+                    switch (sign) {
+                        case '*':
+                            var1 = var1 * var2;
+                            break;
+                        case '/':
+                            var1 = var1 / var2;
+                            break;
+                        case '+':
+                            var1 = var1 + var2;
+                            break;
+                        case '-':
+                            var1 = var1 - var2;
+                            break;
+                    }
+                }
+                calc.jt.setText(String.valueOf(var1));
+                procesed = true;
                 shorHistryOfChar[counterHistorian] = '=';
                 counterHistorian = counterHistorian + 1;
                 //System.out.println("Saved: "+shorHistryOfChar[counterHistorian-1]+" sign at index: "+counterHistorian);
@@ -219,7 +225,6 @@ class MyActionListener implements java.awt.event.ActionListener {
                     var2 = 0;
                     sign = 0;
                     save2var1 = true;
-
                 }
                 //Entering multi digits number
                 if (save2var1 || procesed) {

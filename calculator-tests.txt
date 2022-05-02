@@ -1,0 +1,156 @@
+12=+3=+4=-5+7==
+
+It must be:
+1 => similar to the situation "cipher after =", we pressed "1" so "1" is new value being collecting for the first argument (and previous values, operators must be cleared)
+2 => cipher after cipher => "12" is possible value for the first argument
+= => equals after cipher means that calculation, if exists is processed, if not unchanged "12" is displayed
++ => operator after equals, "12" is set as the first argument, operator "+" is set
+3 => "3" is collected for the second argument
+= => equals after cipher means that calculation "12 + 3" is processed and "15" is displayed
++ => "15" is the first argument, operator "+" is set
+4 => "4" is collected for the second argument
+= => equals after cipher means that calculation "15 + 4" is processed and "19" is displayed
+- => "19" is the first argument, operator "-" is set
+5 => "5" is collected for the second argument
++ => cipher was before and the not processed calculation is available: "19 - 5" is processed now "14" is displayed, "14" is the first argument, operator "+" is set
+7 => "7" is collected for the second argument
+= => equals after cipher means that calculation "14 + 7" is processed and "21" is displayed
+= => last operation "+7" is repeated => "28" is displayed
+
+
+
+
+12+3+4-5=+7==
+It must be:
+1 => similar to the situation "cipher after =", we pressed "1" so "1" is new value being collecting for the first argument )and previous values, operators must be cleared)
+2 => cipher after cipher => "12" is possible value for the first argument
++ => operator after equals, "12" is set as the first argument, operator "+" is set
+3 => "3" is collected for the second argument
++ => cipher was before and the not processed calculation is available: "12 + 3" is processed now "15" is displayed, "15" is the first argument, operator "+" is set
+4 => "4" is collected for the second argument
+- => cipher was before and the not processed calculation is available: "15 + 4" is processed now "19" is displayed, "19" is the first argument, operator "-" is set
+5 => "5" is collected for the second argument
+= => equals after cipher means that calculation "19 - 5" is processed and "14" is displayed
++ => operator after equals, "14" is set as the first argument, operator "+" is set
+7 => "7" is collected for the second argument
+= => equals after cipher means that calculation "14 + 7" is processed and "21" is displayed
+= => last operation "+7" is repeated => "28" is displayed
+
+
+
+
+--2==3==4-====+*=/10*2==-==+=/3==CC+2==C==
+
+It must be:
+- => "zero" is the first argument, operator "-" is set
+- => new operator "-" is set
+2 => "2" is collected for the second argument
+= => calculation of "0-2" => "-2" is displayed
+= => last operation "-2" is repeated => "-4" is displayed
+3 => because after "=" we pressed "3" so 3 is new value being collecting for the first argument and previous values, operators must be cleared
+= => "3" is set as the first argument
+= => "3" is set as the first argument
+4 => because after "=" we pressed "4" so 4 is new value being collecting for the first argument and previous values, operators must be cleared
+- => "4" is the first argument, operator "-" is set
+= => equals after operator means that calculation "4-4" is processed and "zero" is displayed
+= => last operation "-4" is repeated => "-4" is displayed
+= => last operation "-4" is repeated => "-8" is displayed
+= => last operation "-4" is repeated => "-12" is displayed
++ => "-12" is the first argument, operator "+" is set
+* => new operator "*" is set
+= => equals after operator means that calculation "-12 * -12" is processed and "144" is displayed
+/ => "144" is the first argument, operator "/" is set
+1 => "1" is collected for the second argument
+0 => cipher after cipher => "10" is possible value for the second argument
+* => cipher was before and the not processed calculation is available: "144/10" is processed now "14" is displayed, "14" is the first argument, operator "*" is set
+2 => "2" is collected for the second argument
+= => equals after cipher means that calculation "14*2" is processed and "28" is displayed
+= => last operation "*2" is repeated => "56" is displayed
+- => operator after equals, "56" is set as the first argument, operator "-" is set
+= => equals after operator means that calculation "56-56" is processed and "zero" is displayed
+= => last operation "-56" is repeated => "-56" is displayed
++ => operator after equals, "-56" is set as the first argument, operator "+" is set
+= => equals after operator means that calculation "-56+-56" is processed and "-112" is displayed
+/ => "-112" is the first argument, operator "/" is set
+3 => "3" is collected for the second argument
+= => equals after cipher means that calculation "-112/3" is processed and "-37" is displayed
+= => last operation "/3" is repeated => "-12" is displayed
+C => we can clear all values => "zero" is displayed
+C => we can clear all values => "zero" is displayed
++ => "zero" is the first argument, operator "+" is set
+2 => "2" is collected for the second argument
+= => equals after cipher means that calculation "0+2" is processed and "2" is displayed
+= => last operation "+2" is repeated => "4" is displayed
+C => we can clear all values => "zero" is displayed
+= => "zero" is set as the first argument
+= => "zero" is set as the first argument
+
+
+
+
+==123+-12==11=12+=34+2+3-2==+5==+=*/*/=C12=+3=+2+5C=12=4+1=
+
+It must be:
+= => similar to "equals after cipher" means that calculation, if exists is processed, if not unchanged "0" is displayed
+= => similar to "equals after cipher" means that calculation, if exists is processed, if not unchanged "0" is displayed
+1 => because after "=" we pressed "1" so "1" is new value being collecting for the first argument and previous values, operators must be cleared
+2 => cipher after cipher => "12" is possible value for  the first argument
+3 => cipher after cipher => "123" is possible value for  the first argument
++ => "123" is the first argument, operator "+" is set
+- => new operator "-" is set
+1 => "1" is collected for the second argument
+2 => cipher after cipher => "12" is possible value for  the second argument
+= => equals after cipher means that calculation "123-12" is processed and "111" is displayed
+= => last operation "-12" is repeated => "99" is displayed
+1 => because after = we pressed "1" so "1" is new value being collecting for the first argument and previous values, operators must be cleared
+1 => cipher after cipher => "11" is possible value for  the first argument
+= => "11" is set as the first argument
+1 => because after = we pressed "1" so "1" is new value being collecting for the first argument and previous values, operators must be cleared
+2 => cipher after cipher => "12" is possible value for  the first argument
++ => "12" is the first argument, operator "+" is set
+= => equals after operator means that calculation "12 + 12" is processed and "24" is displayed
+3 => because after = we pressed "3" so "3" is new value being collecting for the first argument and previous values, operators must be cleared
+4 => cipher after cipher => "34" is possible value for  the first argument
++ => "34" is the first argument, operator "+" is set
+2 => "2" is collected for the second argument
++ => cipher was before and there is not processed calculation, so calculation "34+2" is processed now "36" is displayed, "36" is the first argument, operator "+" is set
+3 => "3" is collected for the second argument
+- => cipher was before and there is not processed calculation, so calculation "36+3" is processed now "39" is displayed, "39" is the first argument, operator "-" is set
+2 => "2" is collected for the second argument
+= => equals after cipher means that calculation "39-2" is processed and "37" is displayed
+= => last operation "-2" is repeated => "35" is displayed
++ => "35" is the first argument, operator "+" is set
+5 => "5" is collected for the second argument
+= => equals after cipher means that calculation "35+5" is processed and "40" is displayed
+* => "40" is the first argument, operator "*" is set
+/ => new operator "/" is set
+* => new operator "*" is set
+/ => new operator "/" is set
+= => equals after operator means that calculation "40/40" is processed and "one" is displayed
+C => we can clear all values => "zero" is displayed
+1 => similar to the situation "cipher after =", we pressed "1" so "1" is new value being collecting for the first argument and previous values, operators must be cleared
+2 => cipher after cipher => "12" is possible value for  the first argument
+= => "12" is set as the first argument
++ => operator after equals, "12" is set as the first argument, operator "+" is set
+3 => "3" is collected for the second argument
+= => equals after cipher means that calculation "12+3" is processed and "15" is displayed
++ => operator after equals, "15" is set as the first argument, operator "+" is set
+2 => "2" is collected for the second argument
++ => cipher was before and there is not processed calculation, so calculation "15+2" is processed now "17" is displayed, "17" is the first argument, operator "+" is set
+5 => "5" is collected for the second argument
+C => we can clear all values => "zero" is displayed
+= => "zero" is set as the first argument
+1 => because after = we pressed "1" so "1" is new value being collecting for the first argument and previous values, operators must be cleared
+2 => cipher after cipher => "12" is possible value for  the first argument
+= => "12" is set as the first argument
+4 => because after = we pressed "4" so "4" is new value being collecting for the first argument and previous values, operators must be cleared
++ => "4" is the first argument, operator "+" is set
+1 => "1" is collected for the second argument
+= => equals after cipher means that calculation "4+1" is processed and "5" is displayed
+
+
+NOTE!
+12+3=+4
+12+3+4
+
+
